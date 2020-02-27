@@ -49,7 +49,7 @@ public class LogFileController {
 	public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
 		//
 		String filename =""; 
-		// We save into server storage first 
+		// We save the file into server storage first 
 		if (!file.isEmpty()) {
          
             	filename = logFileStorageService.storeLogFile(file);
@@ -98,10 +98,10 @@ public class LogFileController {
 	    	ObjectMapper mapper = new ObjectMapper();
 	    	
 	    	if (lfile !=null) {
-	    	response.setContentType("application/json");
-	        response.setHeader("Content-Disposition", "attachment; filename="+uuid);
-	    	mapper.writeValue(response.getOutputStream(), lfile);
-	    	response.flushBuffer();
+				response.setContentType("application/json");
+				response.setHeader("Content-Disposition", "attachment; filename=" + uuid);
+				mapper.writeValue(response.getOutputStream(), lfile);
+				response.flushBuffer();
 	    	}
 	    	else {
 	    		throw new LogFileNotFoundException("Your file " + uuid + " is not found");

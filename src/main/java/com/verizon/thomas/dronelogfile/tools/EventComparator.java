@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 
+/**
+ * @author thomasphan
+ *
+ */
 public class EventComparator implements Comparator<ArrayList<Object>> {
 	    DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSZ");
 	    @Override

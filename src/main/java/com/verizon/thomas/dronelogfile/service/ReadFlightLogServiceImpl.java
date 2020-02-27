@@ -14,11 +14,16 @@ import com.verizon.thomas.dronelogfile.domain.Voltage;
 import com.verizon.thomas.dronelogfile.repository.DLogfileRepository;
 import com.verizon.thomas.dronelogfile.tools.EventComparator;
 
+/**
+ * @author thomasphan
+ *
+ */
 @Service
 public class ReadFlightLogServiceImpl implements ReadFlightLogService {
 	
 	@Autowired
 	private DLogfileRepository dlogfilerRepo;
+	
 	
 	public Voltage readVoltageFlightById (String uid) {
 		DLogfile jsonfile = dlogfilerRepo.findById(UUID.fromString(uid));
